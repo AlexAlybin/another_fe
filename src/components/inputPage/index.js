@@ -1,4 +1,25 @@
 import React from "react";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center
+  flex-direction: column;
+`;
+
+const Input = styled.input`
+  height: 25px;
+  width: 250px;
+  border: 1px solid #333;
+  border-radius: 3px;
+`;
+
+const Button = styled.button`
+  width: 150px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+`;
 
 export default class InputPage extends React.Component {
   constructor(props) {
@@ -17,21 +38,25 @@ export default class InputPage extends React.Component {
   }
 
   logItem() {
-    console.log(this.state.inputValue);
+    const value = this.state.inputValue;
+    value ? console.log(value) : console.log("No text");
+    this.setState({
+      inputValue: ""
+    });
   }
 
   render() {
     return (
-      <div>
-        <input
+      <Wrapper>
+        <Input
           type="text"
-          placeholder="Type name here"
+          placeholder="Type here..."
           value={this.state.inputValue}
           onChange={this.handleChange}
         />
         <br />
-        <button onClick={this.logItem}>Add Item</button>
-      </div>
+        <Button onClick={this.logItem}>Print</Button>
+      </Wrapper>
     );
   }
 }
