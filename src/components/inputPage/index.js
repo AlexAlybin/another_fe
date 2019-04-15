@@ -7,7 +7,12 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+const Header = styled.h1`
+  font-family: sans-serif;
+`;
+
 const Input = styled.input`
+  margin-top: 20px;
   height: 25px;
   width: 250px;
   border: 1px solid #333;
@@ -48,6 +53,7 @@ export default class InputPage extends React.Component {
   render() {
     return (
       <Wrapper>
+        <Header>Just another console logger...</Header>
         <Input
           type="text"
           placeholder="Type here..."
