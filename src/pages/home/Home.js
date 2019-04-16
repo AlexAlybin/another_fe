@@ -15,6 +15,7 @@ const Input = styled.input`
   margin-right: 5px;
 `;
 const Button = styled.button`
+  cursor: pointer;
   height: 30px;
   border: none;
 `;
